@@ -49,6 +49,7 @@ client.on('ready', () => {
       const date = dateObj.toISOString().split("T")[0]; // Fecha en formato ISO
       const time = dateObj.toTimeString().split(" ")[0]; // Hora sin milisegundos
       
+      console.log("miteando");
       const embed1 = new EmbedBuilder()
         
         .setTitle(`New minted Piggies`)
@@ -57,7 +58,7 @@ client.on('ready', () => {
         .setImage(url_img);
         
       
-       channel.send({
+       await channel.send({
         embeds: [embed1]
 
       });
@@ -67,7 +68,7 @@ client.on('ready', () => {
         console.error('Error de tiempo:', error);
     }
 
-}, 30000);
+}, 60000);
 
 });
 
